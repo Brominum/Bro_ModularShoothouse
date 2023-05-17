@@ -12,6 +12,7 @@ class CfgPatches
 			"Bro_MSW_4m_d",
 			"Bro_MSW_2m_de",
 			"Bro_MSW_4m_de",
+			"Bro_MSW_4m_dd",
 			"Bro_MSW_1m",
 			"Bro_MSW_2m",
 			"Bro_MSW_4m",
@@ -265,6 +266,43 @@ class CfgVehicles
 		displayName = "Wall: 4m Doorway";
 		model = "Bro_ModularShoothouse\Bro_MSW_4m_d.p3d";
 		editorPreview = "Bro_ModularShoothouse\previews\MSW_4m_d.jpg";
+	};
+	class Bro_MSW_4m_dd: Bro_MSW_Base
+	{
+		scope = 2;
+		scopeCurator = 2;
+		displayName = "Wall: 4m Doorway (Double)";
+		model = "Bro_ModularShoothouse\Bro_MSW_4m_dd.p3d";
+		editorPreview = "Bro_ModularShoothouse\previews\MSW_4m_dd.jpg";
+		numberOfDoors = 1;
+		class AnimationSources {
+			class Door01 {
+				source = "user";
+				animPeriod = 0.7;
+				initPhase = 0;
+				Sound = "OldWoodDoorsSound";
+			};
+			class Door02: Door01{};
+		};
+		class UserActions {
+			class Door01_Open
+			{
+				displayNameDefault="<img image='\A3\Ui_f\data\IGUI\Cfg\Actions\open_door_ca.paa' size='1.5' />";
+				displayName = "Open Doors";
+				radius = 2.5;
+				position = "Door01_trigger";
+				onlyForPlayer = 1;
+				condition = (this animationPhase 'Door01') < 0.5;
+				statement = "([this, 'Door01'] call BIS_fnc_DoorNoHandleOpen);([this, 'Door02'] call BIS_fnc_DoorNoHandleOpen)";
+			};
+			class Door01_Close: Door01_Open
+			{
+				displayNameDefault="<img image='\A3\Ui_f\data\IGUI\Cfg\Actions\open_door_ca.paa' size='1.5' />";
+				displayName = "Close Doors";
+				condition = (this animationPhase 'Door01') >= 0.5;
+				statement = "([this, 'Door01'] call BIS_fnc_DoorNoHandleClose);([this, 'Door02'] call BIS_fnc_DoorNoHandleClose)";
+			};
+		};
 	};
 
 // Empty doorways
