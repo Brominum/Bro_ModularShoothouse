@@ -69,11 +69,31 @@ class CfgVehicles
 		icon = "Bro_ModularShoothouse\icon.paa";
 		editorCategory = "Bro_MSW_Base";
 		editorSubcategory = "sm";
+		hiddenSelections[]=
+		{
+			"camo"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"Bro_ModularShoothouse\msh_co.paa"
+		};
 		keepHorizontalPlacement = 1;
 		mapSize = 3;
 		numberOfDoors = 0;
 		scope = 1;
 		scopeCurator = 1;
+		class Attributes
+		{
+			class ObjectTextureCustom0
+			{
+				displayName="$STR_3den_object_attribute_objecttexturecustom0_displayname";
+				tooltip="$STR_3den_object_attribute_objecttexturecustom_tooltip";
+				property="ObjectTextureCustom0";
+				control="Edit";
+				expression="_this setObjectTextureGlobal [0,_value]";
+				defaultValue="(getObjectTextures _this) param [0,'',['']]";
+			};
+		};
 		class DestructionEffects{};
 		class EventHandlers: EventHandlers
 		{
@@ -180,6 +200,11 @@ class CfgVehicles
 		displayName = "Wall: 2m";
 		model = "Bro_ModularShoothouse\Bro_MSW_2m.p3d";
 		editorPreview = "Bro_ModularShoothouse\previews\MSW_2m.jpg";
+		class EventHandlers: EventHandlers
+		{
+			dragged3DEN = "_this call compile preprocessFileLineNumbers 'Bro_ModularShoothouse\snap3.sqf';";
+			registeredToWorld3DEN = "_this call compile preprocessFileLineNumbers 'Bro_ModularShoothouse\snap3.sqf';";
+		};
 	};
 	class Bro_MSW_4m: Bro_MSW_1m
 	{
@@ -192,6 +217,11 @@ class CfgVehicles
 		displayName = "Wall: 8m";
 		model = "Bro_ModularShoothouse\Bro_MSW_8m.p3d";
 		editorPreview = "Bro_ModularShoothouse\previews\MSW_8m.jpg";
+		class EventHandlers: EventHandlers
+		{
+			dragged3DEN = "_this call compile preprocessFileLineNumbers 'Bro_ModularShoothouse\snap3.sqf';";
+			registeredToWorld3DEN = "_this call compile preprocessFileLineNumbers 'Bro_ModularShoothouse\snap3.sqf';";
+		};
 	};
 
 // Corner walls

@@ -9,7 +9,7 @@ params["_object"];
 // First we have to wait till dragging is completed
 if (current3DENOperation != "") exitWith {};
 
-private _nearbyObjects = nearestObjects [_object, ["Bro_MSW_Base"], 5];
+private _nearbyObjects = nearestObjects [_object, ["Bro_MSW_Base"], 4.1];
 _nearbyObjects = _nearbyObjects - [_object];
 //systemChat str _nearbyObjects;
 if (_nearbyObjects isEqualTo []) exitWith {};
