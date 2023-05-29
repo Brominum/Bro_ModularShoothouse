@@ -27,7 +27,20 @@ class CfgPatches
 			"Bro_CWK_2m_E",
 			"Bro_CWK_2m_c",
 			"Bro_CWK_4m_S",
-			"Bro_CWK_4m_O"
+			"Bro_CWK_4m_O",
+			"Bro_MSW_1m_conc",
+			"Bro_MSW_2m_conc",
+			"Bro_MSW_4m_conc",
+			"Bro_MSW_8m_conc",
+			"Bro_MSW_1m_c_conc",
+			"Bro_MSW_2m_c_conc",
+			"Bro_MSW_2m_w_conc",
+			"Bro_MSW_4m_w_conc",
+			"Bro_MSW_2m_de_conc",
+			"Bro_MSW_4m_de_conc",
+			"Bro_MSW_2m_d_conc",
+			"Bro_MSW_4m_d_conc",
+			"Bro_MSW_4m_dd_conc"
 		};
 		weapons[] = {};
 	};
@@ -45,7 +58,11 @@ class CfgEditorSubcategories
 {
 	class sm
 	{
-		displayName = "Walls";
+		displayName = "Walls (Wood)";
+	};
+	class sm2
+	{
+		displayName = "Walls (Concrete)";
 	};
 	class mcw
 	{
@@ -76,6 +93,10 @@ class CfgVehicles
 		hiddenSelectionsTextures[]=
 		{
 			"Bro_ModularShoothouse\msh_co.paa"
+		};
+		hiddenSelectionsMaterials[]=
+		{
+			"Bro_ModularShoothouse\msh.rvmat"
 		};
 		keepHorizontalPlacement = 1;
 		mapSize = 3;
@@ -254,7 +275,23 @@ class CfgVehicles
 		editorPreview = "Bro_ModularShoothouse\previews\MSW_4m_w.jpg";
 	};
 
-// Doorways
+// Empty doorways
+
+	class Bro_MSW_2m_de: Bro_MSW_1m
+	{
+		displayName = "Wall: 2m Doorway (No door)";
+		model = "Bro_ModularShoothouse\Bro_MSW_2m_de.p3d";
+		editorPreview = "Bro_ModularShoothouse\previews\MSW_2m_de.jpg";
+	};
+	class Bro_MSW_4m_de: Bro_MSW_1m
+	{
+		displayName = "Wall: 4m Doorway (No door)";
+		model = "Bro_ModularShoothouse\Bro_MSW_4m_de.p3d";
+		editorPreview = "Bro_ModularShoothouse\previews\MSW_4m_de.jpg";
+	};
+
+// Functional Doorways
+
 	class Bro_MSW_2m_d: Bro_MSW_Base
 	{
 		scope = 2;
@@ -335,18 +372,176 @@ class CfgVehicles
 		};
 	};
 
-// Empty doorways
+			//Concrete
+			//Variants
 
-	class Bro_MSW_2m_de: Bro_MSW_1m
+	class Bro_MSW_1m_conc: Bro_MSW_1m 
 	{
-		displayName = "Wall: 2m Doorway (No door)";
-		model = "Bro_ModularShoothouse\Bro_MSW_2m_de.p3d";
-		editorPreview = "Bro_ModularShoothouse\previews\MSW_2m_de.jpg";
+		editorPreview = "Bro_ModularShoothouse\previews\MSW_1m_conc.jpg";
+		editorSubcategory = "sm2";
+		hiddenSelectionsTextures[]=
+		{
+			"Bro_ModularShoothouse\concrete\msh_co.paa"
+		};
+		hiddenSelectionsMaterials[]=
+		{
+			"Bro_ModularShoothouse\concrete\msh.rvmat"
+		};
 	};
-	class Bro_MSW_4m_de: Bro_MSW_1m
+	class Bro_MSW_2m_conc: Bro_MSW_2m 
 	{
-		displayName = "Wall: 4m Doorway (No door)";
-		model = "Bro_ModularShoothouse\Bro_MSW_4m_de.p3d";
-		editorPreview = "Bro_ModularShoothouse\previews\MSW_4m_de.jpg";
+		editorPreview = "Bro_ModularShoothouse\previews\MSW_2m_conc.jpg";
+		editorSubcategory = "sm2";
+		hiddenSelectionsTextures[]=
+		{
+			"Bro_ModularShoothouse\concrete\msh_co.paa"
+		};
+		hiddenSelectionsMaterials[]=
+		{
+			"Bro_ModularShoothouse\concrete\msh.rvmat"
+		};
+	};
+	class Bro_MSW_4m_conc: Bro_MSW_4m 
+	{
+		editorPreview = "Bro_ModularShoothouse\previews\MSW_4m_conc.jpg";
+		editorSubcategory = "sm2";
+		hiddenSelectionsTextures[]=
+		{
+			"Bro_ModularShoothouse\concrete\msh_co.paa"
+		};
+		hiddenSelectionsMaterials[]=
+		{
+			"Bro_ModularShoothouse\concrete\msh.rvmat"
+		};
+	};
+	class Bro_MSW_8m_conc: Bro_MSW_8m 
+	{
+		editorPreview = "Bro_ModularShoothouse\previews\MSW_8m_conc.jpg";
+		editorSubcategory = "sm2";
+		hiddenSelectionsTextures[]=
+		{
+			"Bro_ModularShoothouse\concrete\msh_co.paa"
+		};
+		hiddenSelectionsMaterials[]=
+		{
+			"Bro_ModularShoothouse\concrete\msh.rvmat"
+		};
+	};
+	class Bro_MSW_1m_c_conc: Bro_MSW_1m_c 
+	{
+		editorPreview = "Bro_ModularShoothouse\previews\MSW_1m_c_conc.jpg";
+		editorSubcategory = "sm2";
+		hiddenSelectionsTextures[]=
+		{
+			"Bro_ModularShoothouse\concrete\msh_co.paa"
+		};
+		hiddenSelectionsMaterials[]=
+		{
+			"Bro_ModularShoothouse\concrete\msh.rvmat"
+		};
+	};
+	class Bro_MSW_2m_c_conc: Bro_MSW_2m_c 
+	{
+		editorPreview = "Bro_ModularShoothouse\previews\MSW_2m_c_conc.jpg";
+		editorSubcategory = "sm2";
+		hiddenSelectionsTextures[]=
+		{
+			"Bro_ModularShoothouse\concrete\msh_co.paa"
+		};
+		hiddenSelectionsMaterials[]=
+		{
+			"Bro_ModularShoothouse\concrete\msh.rvmat"
+		};
+	};
+	class Bro_MSW_2m_w_conc: Bro_MSW_2m_w 
+	{
+		editorPreview = "Bro_ModularShoothouse\previews\MSW_2m_w_conc.jpg";
+		editorSubcategory = "sm2";
+		hiddenSelectionsTextures[]=
+		{
+			"Bro_ModularShoothouse\concrete\msh_co.paa"
+		};
+		hiddenSelectionsMaterials[]=
+		{
+			"Bro_ModularShoothouse\concrete\msh.rvmat"
+		};
+	};
+	class Bro_MSW_4m_w_conc: Bro_MSW_4m_w 
+	{
+		editorPreview = "Bro_ModularShoothouse\previews\MSW_4m_w_conc.jpg";
+		editorSubcategory = "sm2";
+		hiddenSelectionsTextures[]=
+		{
+			"Bro_ModularShoothouse\concrete\msh_co.paa"
+		};
+		hiddenSelectionsMaterials[]=
+		{
+			"Bro_ModularShoothouse\concrete\msh.rvmat"
+		};
+	};
+	class Bro_MSW_2m_de_conc: Bro_MSW_2m_de 
+	{
+		editorPreview = "Bro_ModularShoothouse\previews\MSW_2m_de_conc.jpg";
+		editorSubcategory = "sm2";
+		hiddenSelectionsTextures[]=
+		{
+			"Bro_ModularShoothouse\concrete\msh_co.paa"
+		};
+		hiddenSelectionsMaterials[]=
+		{
+			"Bro_ModularShoothouse\concrete\msh.rvmat"
+		};
+	};
+	class Bro_MSW_4m_de_conc: Bro_MSW_4m_de 
+	{
+		editorPreview = "Bro_ModularShoothouse\previews\MSW_4m_de_conc.jpg";
+		editorSubcategory = "sm2";
+		hiddenSelectionsTextures[]=
+		{
+			"Bro_ModularShoothouse\concrete\msh_co.paa"
+		};
+		hiddenSelectionsMaterials[]=
+		{
+			"Bro_ModularShoothouse\concrete\msh.rvmat"
+		};
+	};
+	class Bro_MSW_2m_d_conc: Bro_MSW_2m_d 
+	{
+		editorPreview = "Bro_ModularShoothouse\previews\MSW_2m_d_conc.jpg";
+		editorSubcategory = "sm2";
+		hiddenSelectionsTextures[]=
+		{
+			"Bro_ModularShoothouse\concrete\msh_co.paa"
+		};
+		hiddenSelectionsMaterials[]=
+		{
+			"Bro_ModularShoothouse\concrete\msh.rvmat"
+		};
+	};
+	class Bro_MSW_4m_d_conc: Bro_MSW_4m_d 
+	{
+		editorPreview = "Bro_ModularShoothouse\previews\MSW_4m_d_conc.jpg";
+		editorSubcategory = "sm2";
+		hiddenSelectionsTextures[]=
+		{
+			"Bro_ModularShoothouse\concrete\msh_co.paa"
+		};
+		hiddenSelectionsMaterials[]=
+		{
+			"Bro_ModularShoothouse\concrete\msh.rvmat"
+		};
+	};
+	class Bro_MSW_4m_dd_conc: Bro_MSW_4m_dd 
+	{
+		editorPreview = "Bro_ModularShoothouse\previews\MSW_4m_dd_conc.jpg";
+		editorSubcategory = "sm2";
+		hiddenSelectionsTextures[]=
+		{
+			"Bro_ModularShoothouse\concrete\msh_co.paa"
+		};
+		hiddenSelectionsMaterials[]=
+		{
+			"Bro_ModularShoothouse\concrete\msh.rvmat"
+		};
 	};
 };
