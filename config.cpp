@@ -45,6 +45,22 @@ class CfgPatches
 		weapons[] = {};
 	};
 };
+
+class CfgFunctions 
+{
+	class BRO 
+	{
+		tag = "BRO";
+		class functions 
+		{
+			file = "\Bro_ModularShoothouse\functions";
+			class snap{};
+			class snap2{};
+			class snap3{};
+		};
+	};
+};
+
 class CfgEditorCategories
 {
 	class Bro_MSW_Base
@@ -118,8 +134,8 @@ class CfgVehicles
 		class DestructionEffects{};
 		class EventHandlers: EventHandlers
 		{
-			dragged3DEN = "_this call compile preprocessFileLineNumbers 'Bro_ModularShoothouse\snap.sqf';";
-			registeredToWorld3DEN = "_this call compile preprocessFileLineNumbers 'Bro_ModularShoothouse\snap.sqf';";
+			dragged3DEN = "_this call bro_fnc_snap;";
+			registeredToWorld3DEN = "_this call bro_fnc_snap;";
 		};
 		class SimpleObject
 		{
@@ -146,8 +162,8 @@ class CfgVehicles
 		class DestructionEffects{};
 		class EventHandlers: EventHandlers
 		{
-			dragged3DEN = "_this call compile preprocessFileLineNumbers 'Bro_ModularShoothouse\snap2.sqf';";
-			registeredToWorld3DEN = "_this call compile preprocessFileLineNumbers 'Bro_ModularShoothouse\snap2.sqf';";
+			dragged3DEN = "_this call bro_fnc_snap2;";
+			registeredToWorld3DEN = "_this call bro_fnc_snap2;";
 		};
 		class SimpleObject
 		{
@@ -223,8 +239,8 @@ class CfgVehicles
 		editorPreview = "Bro_ModularShoothouse\previews\MSW_2m.jpg";
 		class EventHandlers: EventHandlers
 		{
-			dragged3DEN = "_this call compile preprocessFileLineNumbers 'Bro_ModularShoothouse\snap3.sqf';";
-			registeredToWorld3DEN = "_this call compile preprocessFileLineNumbers 'Bro_ModularShoothouse\snap3.sqf';";
+			dragged3DEN = "_this call bro_fnc_snap3;";
+			registeredToWorld3DEN = "_this call bro_fnc_snap3;";
 		};
 	};
 	class Bro_MSW_4m: Bro_MSW_1m
@@ -240,8 +256,8 @@ class CfgVehicles
 		editorPreview = "Bro_ModularShoothouse\previews\MSW_8m.jpg";
 		class EventHandlers: EventHandlers
 		{
-			dragged3DEN = "_this call compile preprocessFileLineNumbers 'Bro_ModularShoothouse\snap3.sqf';";
-			registeredToWorld3DEN = "_this call compile preprocessFileLineNumbers 'Bro_ModularShoothouse\snap3.sqf';";
+			dragged3DEN = "_this call bro_fnc_snap3;";
+			registeredToWorld3DEN = "_this call bro_fnc_snap3;";
 		};
 	};
 
