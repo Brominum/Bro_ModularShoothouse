@@ -10,9 +10,12 @@ class CfgPatches
 		{
 			"Bro_MSW_2m_d",
 			"Bro_MSW_4m_d",
+			"Bro_MSW_4m_dd",
+			"Land_Bro_MSW_2m_d",
+			"Land_Bro_MSW_4m_d",
+			"Land_Bro_MSW_4m_dd",
 			"Bro_MSW_2m_de",
 			"Bro_MSW_4m_de",
-			"Bro_MSW_4m_dd",
 			"Bro_MSW_1m",
 			"Bro_MSW_2m",
 			"Bro_MSW_4m",
@@ -40,7 +43,10 @@ class CfgPatches
 			"Bro_MSW_4m_de_conc",
 			"Bro_MSW_2m_d_conc",
 			"Bro_MSW_4m_d_conc",
-			"Bro_MSW_4m_dd_conc"
+			"Bro_MSW_4m_dd_conc",
+			"Land_Bro_MSW_2m_d_conc",
+			"Land_Bro_MSW_4m_d_conc",
+			"Land_Bro_MSW_4m_dd_conc"
 		};
 		weapons[] = {};
 	};
@@ -308,7 +314,7 @@ class CfgVehicles
 
 // Functional Doorways
 
-	class Bro_MSW_2m_d: Bro_MSW_Base
+	class Land_Bro_MSW_2m_d: Bro_MSW_Base
 	{
 		scope = 2;
 		scopeCurator = 2;
@@ -344,13 +350,13 @@ class CfgVehicles
 			};
 		};
 	};
-	class Bro_MSW_4m_d: Bro_MSW_2m_d
+	class Land_Bro_MSW_4m_d: Land_Bro_MSW_2m_d
 	{
 		displayName = "Wall: 4m Doorway";
 		model = "Bro_ModularShoothouse\Bro_MSW_4m_d.p3d";
 		editorPreview = "Bro_ModularShoothouse\previews\MSW_4m_d.jpg";
 	};
-	class Bro_MSW_4m_dd: Bro_MSW_Base
+	class Land_Bro_MSW_4m_dd: Bro_MSW_Base
 	{
 		scope = 2;
 		scopeCurator = 2;
@@ -521,7 +527,7 @@ class CfgVehicles
 			"Bro_ModularShoothouse\concrete\msh.rvmat"
 		};
 	};
-	class Bro_MSW_2m_d_conc: Bro_MSW_2m_d 
+	class Land_Bro_MSW_2m_d_conc: Land_Bro_MSW_2m_d 
 	{
 		editorPreview = "Bro_ModularShoothouse\previews\MSW_2m_d_conc.jpg";
 		editorSubcategory = "sm2";
@@ -534,7 +540,7 @@ class CfgVehicles
 			"Bro_ModularShoothouse\concrete\msh.rvmat"
 		};
 	};
-	class Bro_MSW_4m_d_conc: Bro_MSW_4m_d 
+	class Land_Bro_MSW_4m_d_conc: Land_Bro_MSW_4m_d 
 	{
 		editorPreview = "Bro_ModularShoothouse\previews\MSW_4m_d_conc.jpg";
 		editorSubcategory = "sm2";
@@ -547,7 +553,7 @@ class CfgVehicles
 			"Bro_ModularShoothouse\concrete\msh.rvmat"
 		};
 	};
-	class Bro_MSW_4m_dd_conc: Bro_MSW_4m_dd 
+	class Land_Bro_MSW_4m_dd_conc: Land_Bro_MSW_4m_dd 
 	{
 		editorPreview = "Bro_ModularShoothouse\previews\MSW_4m_dd_conc.jpg";
 		editorSubcategory = "sm2";
@@ -560,4 +566,13 @@ class CfgVehicles
 			"Bro_ModularShoothouse\concrete\msh.rvmat"
 		};
 	};
+
+// Backwards compatibility for TB, we gotta stick Land_ in front because... we just gotta!!! So I gotta maintain backwards compatibility here.
+	class Bro_MSW_2m_d: Land_Bro_MSW_2m_d{scope=1;};
+	class Bro_MSW_4m_d: Land_Bro_MSW_4m_d{scope=1;};
+	class Bro_MSW_4m_dd: Land_Bro_MSW_4m_dd{scope=1;};
+	class Bro_MSW_2m_d_conc: Land_Bro_MSW_2m_d_conc{scope=1;};
+	class Bro_MSW_4m_d_conc: Land_Bro_MSW_4m_d_conc{scope=1;};
+	class Bro_MSW_4m_dd_conc: Land_Bro_MSW_4m_dd_conc{scope=1;};
+
 };
