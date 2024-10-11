@@ -8,9 +8,6 @@ class CfgPatches
 		requiredVersion = 0.1;
 		units[] =
 		{
-			"Bro_MSW_2m_d",
-			"Bro_MSW_4m_d",
-			"Bro_MSW_4m_dd",
 			"Land_Bro_MSW_2m_d",
 			"Land_Bro_MSW_4m_d",
 			"Land_Bro_MSW_4m_dd",
@@ -41,9 +38,6 @@ class CfgPatches
 			"Bro_MSW_4m_w_conc",
 			"Bro_MSW_2m_de_conc",
 			"Bro_MSW_4m_de_conc",
-			"Bro_MSW_2m_d_conc",
-			"Bro_MSW_4m_d_conc",
-			"Bro_MSW_4m_dd_conc",
 			"Land_Bro_MSW_2m_d_conc",
 			"Land_Bro_MSW_4m_d_conc",
 			"Land_Bro_MSW_4m_dd_conc"
@@ -93,9 +87,7 @@ class CfgEditorSubcategories
 };
 class CfgVehicles
 {
-	
 // Base class declarations. Avoid modifying.
-	
 	class House_F
 	{
 		class Eventhandlers;
@@ -229,7 +221,6 @@ class CfgVehicles
 	};
 
 // Straight walls
-
 	class Bro_MSW_1m: Bro_MSW_Base
 	{
 		scope = 2;
@@ -268,7 +259,6 @@ class CfgVehicles
 	};
 
 // Corner walls
-
 	class Bro_MSW_1m_c: Bro_MSW_1m
 	{
 		displayName = "Wall: 1m Corner";
@@ -283,7 +273,6 @@ class CfgVehicles
 	};
 
 // Window walls
-
 	class Bro_MSW_2m_w: Bro_MSW_1m
 	{
 		displayName = "Wall: 2m Window";
@@ -298,7 +287,6 @@ class CfgVehicles
 	};
 
 // Empty doorways
-
 	class Bro_MSW_2m_de: Bro_MSW_1m
 	{
 		displayName = "Wall: 2m Doorway (No door)";
@@ -313,7 +301,6 @@ class CfgVehicles
 	};
 
 // Functional Doorways
-
 	class Land_Bro_MSW_2m_d: Bro_MSW_Base
 	{
 		scope = 2;
@@ -323,30 +310,35 @@ class CfgVehicles
 		editorPreview = "Bro_ModularShoothouse\previews\MSW_2m_d.jpg";
 		numberOfDoors = 1;
 		class AnimationSources {
-			class Door01 {
+			class Door_1 {
 				source = "user";
-				animPeriod = 0.7;
+				animPeriod = 0.8;
 				initPhase = 0;
-				Sound = "OldWoodDoorsSound";
 			};
+			class Door_1_sound_source: Door_1 {
+				Sound = "OldWoodDoorsSound";
+				soundPosition="Door_1_trigger";
+			};
+			class Door_1_locked_source: Door_1{};
 		};
 		class UserActions {
-			class Door01_Open
+			class OpenDoor_1
 			{
-				displayNameDefault="<img image='\A3\Ui_f\data\IGUI\Cfg\Actions\open_door_ca.paa' size='1.5' />";
-				displayName = "Open Door";
-				radius = 2;
-				position = "Door01_trigger";
-				onlyForPlayer = 1;
-				condition = (this animationPhase 'Door01') < 0.5;
-				statement = ([this, 'Door01'] call BIS_fnc_DoorNoHandleOpen);
+				displayNameDefault="<img image='\A3\Ui_f\data\IGUI\Cfg\Actions\open_door_ca.paa' size='2' />";
+				displayName="$STR_DN_OUT_O_DOOR";
+				position="Door_1_trigger";
+				actionNamedSel="Door_1";
+				radius=2.0;
+				onlyForPlayer=1;
+				condition="((this animationSourcePhase 'Door_1_sound_source') < 0.5) && (cameraOn isKindOf 'CAManBase')";
+				statement="([this, 1, 1] call BIS_fnc_Door)";
 			};
-			class Door01_Close: Door01_Open
+			class CloseDoor_1: OpenDoor_1
 			{
-				displayNameDefault="<img image='\A3\Ui_f\data\IGUI\Cfg\Actions\open_door_ca.paa' size='1.5' />";
-				displayName = "Close Door";
-				condition = (this animationPhase 'Door01') >= 0.5;
-				statement = ([this, 'Door01'] call BIS_fnc_DoorNoHandleClose);
+				displayNameDefault="<img image='\A3\Ui_f\data\IGUI\Cfg\Actions\open_door_ca.paa' size='2' />";
+				displayName="$STR_DN_OUT_C_DOOR";
+				condition="((this animationSourcePhase 'Door_1_sound_source') >= 0.5) && ((this getVariable ['bis_disabled_Door_1', 0]) != 1) && (cameraOn isKindOf 'CAManBase')";
+				statement="([this, 1, 0] call BIS_fnc_Door)";
 			};
 		};
 	};
@@ -365,38 +357,68 @@ class CfgVehicles
 		editorPreview = "Bro_ModularShoothouse\previews\MSW_4m_dd.jpg";
 		numberOfDoors = 1;
 		class AnimationSources {
-			class Door01 {
+			class Door_1 {
 				source = "user";
-				animPeriod = 0.7;
+				animPeriod = 0.8;
 				initPhase = 0;
-				Sound = "OldWoodDoorsSound";
 			};
-			class Door02: Door01{};
+			class Door_1_sound_source: Door_1 {
+				Sound = "OldWoodDoorsSound";
+				soundPosition="Door_1_trigger";
+			};
+			class Door_1_locked_source: Door_1{};
+			
+			class Door_2 {
+				source = "user";
+				animPeriod = 0.8;
+				initPhase = 0;
+			};
+			class Door_2_sound_source: Door_2 {
+				Sound = "OldWoodDoorsSound";
+				soundPosition="Door_2_trigger";
+			};
+			class Door_2_locked_source: Door_2{};
 		};
 		class UserActions {
-			class Door01_Open
+			class OpenDoor_1
 			{
-				displayNameDefault="<img image='\A3\Ui_f\data\IGUI\Cfg\Actions\open_door_ca.paa' size='1.5' />";
-				displayName = "Open Doors";
-				radius = 2.5;
-				position = "Door01_trigger";
-				onlyForPlayer = 1;
-				condition = (this animationPhase 'Door01') < 0.5;
-				statement = "([this, 'Door01'] call BIS_fnc_DoorNoHandleOpen);([this, 'Door02'] call BIS_fnc_DoorNoHandleOpen)";
+				displayNameDefault="<img image='\A3\Ui_f\data\IGUI\Cfg\Actions\open_door_ca.paa' size='2' />";
+				displayName="Open Left Door";
+				position="Door_1_trigger";
+				actionNamedSel="Door_1";
+				radius=2.0;
+				onlyForPlayer=1;
+				condition="((this animationSourcePhase 'Door_1_sound_source') < 0.5) && (cameraOn isKindOf 'CAManBase')";
+				statement="([this, 1, 1] call BIS_fnc_Door)";
 			};
-			class Door01_Close: Door01_Open
+			class CloseDoor_1: OpenDoor_1
 			{
-				displayNameDefault="<img image='\A3\Ui_f\data\IGUI\Cfg\Actions\open_door_ca.paa' size='1.5' />";
-				displayName = "Close Doors";
-				condition = (this animationPhase 'Door01') >= 0.5;
-				statement = "([this, 'Door01'] call BIS_fnc_DoorNoHandleClose);([this, 'Door02'] call BIS_fnc_DoorNoHandleClose)";
+				displayNameDefault="<img image='\A3\Ui_f\data\IGUI\Cfg\Actions\open_door_ca.paa' size='2' />";
+				displayName="Close Left Door";
+				condition="((this animationSourcePhase 'Door_1_sound_source') >= 0.5) && ((this getVariable ['bis_disabled_Door_1', 0]) != 1) && (cameraOn isKindOf 'CAManBase')";
+				statement="([this, 1, 0] call BIS_fnc_Door)";
+			};
+			class OpenDoor_2
+			{
+				displayNameDefault="<img image='\A3\Ui_f\data\IGUI\Cfg\Actions\open_door_ca.paa' size='2' />";
+				displayName="Open Right Door";
+				position="Door_1_trigger";
+				actionNamedSel="Door_2";
+				radius=2.0;
+				onlyForPlayer=1;
+				condition="((this animationSourcePhase 'Door_2_sound_source') < 0.5) && (cameraOn isKindOf 'CAManBase')";
+				statement="([this, 2, 1] call BIS_fnc_Door)";
+			};
+			class CloseDoor_2: OpenDoor_2
+			{
+				displayNameDefault="<img image='\A3\Ui_f\data\IGUI\Cfg\Actions\open_door_ca.paa' size='2' />";
+				displayName="Close Right Door";
+				condition="((this animationSourcePhase 'Door_2_sound_source') >= 0.5) && ((this getVariable ['bis_disabled_Door_2', 0]) != 1) && (cameraOn isKindOf 'CAManBase')";
+				statement="([this, 2, 0] call BIS_fnc_Door)";
 			};
 		};
 	};
-
-			//Concrete
-			//Variants
-
+//Concrete Variants
 	class Bro_MSW_1m_conc: Bro_MSW_1m 
 	{
 		editorPreview = "Bro_ModularShoothouse\previews\MSW_1m_conc.jpg";
@@ -574,5 +596,4 @@ class CfgVehicles
 	class Bro_MSW_2m_d_conc: Land_Bro_MSW_2m_d_conc{scope=1;};
 	class Bro_MSW_4m_d_conc: Land_Bro_MSW_4m_d_conc{scope=1;};
 	class Bro_MSW_4m_dd_conc: Land_Bro_MSW_4m_dd_conc{scope=1;};
-
 };

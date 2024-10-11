@@ -9,9 +9,9 @@ params["_object"];
 // First we have to wait till dragging is completed
 if ((is3DEN && {current3DENOperation != "" || {get3DENActionState "MoveGridToggle" == 0}})) exitWith {};
 
-private _nearbyObjects = nearestObjects [_object, ["Bro_MSWR_Remastered","Bro_MSF_Remastered"], 6.1];
+private _nearbyObjects = nearestObjects [_object, ["Land_Bro_MSF_Big","Land_Bro_MSWR_Plain"], 7.1];
 _nearbyObjects = _nearbyObjects - [_object];
-//systemChat str _nearbyObjects;
+// systemChat str _nearbyObjects;
 if (_nearbyObjects isEqualTo []) exitWith {};
 
 private _nearestObject	= _nearbyObjects # 0;
