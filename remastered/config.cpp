@@ -8,8 +8,7 @@ class CfgPatches {
 };
 class CfgFunctions  {
 	class bro  {
-		tag = "bro";
-		class functions {
+		class msh_new {
 			file = "\Bro_ModularShoothouse\functions";
 			class snap_remastered{};
 		};

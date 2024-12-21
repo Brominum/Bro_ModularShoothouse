@@ -2,14 +2,13 @@ class CfgPatches {
 	class Bro_MSW_Base {
 		name = "Modular Shoothouse [Bromine]";
 		author = "Bromine";
-		requiredAddons[] = {"A3_Data_F_Loadorder"};
+		requiredAddons[] = {"A3_Data_F_Decade_Loadorder"};
 		requiredVersion = 1.60;
 	};
 };
 class CfgFunctions  {
 	class bro  {
-		tag = "bro";
-		class functions {
+		class msh_old {
 			file = "\Bro_ModularShoothouse\functions";
 			class snap{};
 			class snap2{};
