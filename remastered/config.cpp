@@ -28,11 +28,11 @@ class CfgEditorSubcategories {
 		displayName = "Remastered Floors";
 	};
 };
+class House_F {
+	class Eventhandlers;
+};
 class CfgVehicles {
 // Base class for inheritance
-	class House_F {
-		class Eventhandlers;
-	};
 	class Bro_MSW_Remastered: House_F {
 		armor=350;
 		author = "Bromine";

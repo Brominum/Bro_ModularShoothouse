@@ -34,11 +34,11 @@ class CfgEditorSubcategories {
 		displayName = "Catwalks";
 	};
 };
+class House_F {
+	class Eventhandlers;
+};
 class CfgVehicles {
 // Base class declarations. Avoid modifying.
-	class House_F {
-		class Eventhandlers;
-	};
 	class Bro_MSW_Base: House_F {
 		armor=350;
 		author = "Bromine";
