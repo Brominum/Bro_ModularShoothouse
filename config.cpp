@@ -37,10 +37,12 @@ class CfgEditorSubcategories {
 		displayName = "Catwalks";
 	};
 };
-class House_F {
-	class Eventhandlers;
-};
 class CfgVehicles {
+// Inheritances. REALLY don't modify these lol.
+	class House;
+	class House_F: House {
+		class Eventhandlers;
+	};
 // Base class declarations. Avoid modifying.
 	class Bro_MSW_Base: House_F {
 		armor=350;
