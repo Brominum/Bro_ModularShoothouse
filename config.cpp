@@ -30,6 +30,9 @@ class CfgEditorSubcategories {
 	class sm2 {
 		displayName = "Old Walls (Concrete)";
 	};
+	class sm_old_r {
+		displayName = "Old Walls (Rubber)";
+	};
 	class mcw {
 		displayName = "Catwalks";
 	};
@@ -448,6 +451,137 @@ class CfgVehicles {
 		};
 		hiddenSelectionsMaterials[]= {
 			"Bro_ModularShoothouse\concrete\msh.rvmat"
+		};
+	};
+//Rubber Variants
+	class Bro_MSW_1m_rubber: Bro_MSW_1m  {
+		editorPreview = "Bro_ModularShoothouse\previews\bro_MSW_1m_rubber.jpg";
+		editorSubcategory = "sm_old_r";
+		hiddenSelectionsTextures[]= {
+			"Bro_ModularShoothouse\rubber\msh_co.paa"
+		};
+		hiddenSelectionsMaterials[]= {
+			"Bro_ModularShoothouse\rubber\msh.rvmat"
+		};
+	};
+	class Bro_MSW_2m_rubber: Bro_MSW_2m  {
+		editorPreview = "Bro_ModularShoothouse\previews\bro_MSW_2m_rubber.jpg";
+		editorSubcategory = "sm_old_r";
+		hiddenSelectionsTextures[]= {
+			"Bro_ModularShoothouse\rubber\msh_co.paa"
+		};
+		hiddenSelectionsMaterials[]= {
+			"Bro_ModularShoothouse\rubber\msh.rvmat"
+		};
+	};
+	class Bro_MSW_4m_rubber: Bro_MSW_4m  {
+		editorPreview = "Bro_ModularShoothouse\previews\bro_MSW_4m_rubber.jpg";
+		editorSubcategory = "sm_old_r";
+		hiddenSelectionsTextures[]= {
+			"Bro_ModularShoothouse\rubber\msh_co.paa"
+		};
+		hiddenSelectionsMaterials[]= {
+			"Bro_ModularShoothouse\rubber\msh.rvmat"
+		};
+	};
+	class Bro_MSW_8m_rubber: Bro_MSW_8m  {
+		editorPreview = "Bro_ModularShoothouse\previews\bro_MSW_8m_rubber.jpg";
+		editorSubcategory = "sm_old_r";
+		hiddenSelectionsTextures[]= {
+			"Bro_ModularShoothouse\rubber\msh_co.paa"
+		};
+		hiddenSelectionsMaterials[]= {
+			"Bro_ModularShoothouse\rubber\msh.rvmat"
+		};
+	};
+	class Bro_MSW_1m_c_rubber: Bro_MSW_1m_c  {
+		editorPreview = "Bro_ModularShoothouse\previews\bro_MSW_1m_c_rubber.jpg";
+		editorSubcategory = "sm_old_r";
+		hiddenSelectionsTextures[]= {
+			"Bro_ModularShoothouse\rubber\msh_co.paa"
+		};
+		hiddenSelectionsMaterials[]= {
+			"Bro_ModularShoothouse\rubber\msh.rvmat"
+		};
+	};
+	class Bro_MSW_2m_c_rubber: Bro_MSW_2m_c  {
+		editorPreview = "Bro_ModularShoothouse\previews\bro_MSW_2m_c_rubber.jpg";
+		editorSubcategory = "sm_old_r";
+		hiddenSelectionsTextures[]= {
+			"Bro_ModularShoothouse\rubber\msh_co.paa"
+		};
+		hiddenSelectionsMaterials[]= {
+			"Bro_ModularShoothouse\rubber\msh.rvmat"
+		};
+	};
+	class Bro_MSW_2m_w_rubber: Bro_MSW_2m_w  {
+		editorPreview = "Bro_ModularShoothouse\previews\bro_MSW_2m_w_rubber.jpg";
+		editorSubcategory = "sm_old_r";
+		hiddenSelectionsTextures[]= {
+			"Bro_ModularShoothouse\rubber\msh_co.paa"
+		};
+		hiddenSelectionsMaterials[]= {
+			"Bro_ModularShoothouse\rubber\msh.rvmat"
+		};
+	};
+	class Bro_MSW_4m_w_rubber: Bro_MSW_4m_w  {
+		editorPreview = "Bro_ModularShoothouse\previews\bro_MSW_4m_w_rubber.jpg";
+		editorSubcategory = "sm_old_r";
+		hiddenSelectionsTextures[]= {
+			"Bro_ModularShoothouse\rubber\msh_co.paa"
+		};
+		hiddenSelectionsMaterials[]= {
+			"Bro_ModularShoothouse\rubber\msh.rvmat"
+		};
+	};
+	class Bro_MSW_2m_de_rubber: Bro_MSW_2m_de  {
+		editorPreview = "Bro_ModularShoothouse\previews\bro_MSW_2m_de_rubber.jpg";
+		editorSubcategory = "sm_old_r";
+		hiddenSelectionsTextures[]= {
+			"Bro_ModularShoothouse\rubber\msh_co.paa"
+		};
+		hiddenSelectionsMaterials[]= {
+			"Bro_ModularShoothouse\rubber\msh.rvmat"
+		};
+	};
+	class Bro_MSW_4m_de_rubber: Bro_MSW_4m_de  {
+		editorPreview = "Bro_ModularShoothouse\previews\bro_MSW_4m_de_rubber.jpg";
+		editorSubcategory = "sm_old_r";
+		hiddenSelectionsTextures[]= {
+			"Bro_ModularShoothouse\rubber\msh_co.paa"
+		};
+		hiddenSelectionsMaterials[]= {
+			"Bro_ModularShoothouse\rubber\msh.rvmat"
+		};
+	};
+	class Land_Bro_MSW_2m_d_rubber: Land_Bro_MSW_2m_d  {
+		editorPreview = "Bro_ModularShoothouse\previews\Land_Bro_MSW_2m_d_rubber.jpg";
+		editorSubcategory = "sm_old_r";
+		hiddenSelectionsTextures[]= {
+			"Bro_ModularShoothouse\rubber\msh_co.paa"
+		};
+		hiddenSelectionsMaterials[]= {
+			"Bro_ModularShoothouse\rubber\msh.rvmat"
+		};
+	};
+	class Land_Bro_MSW_4m_d_rubber: Land_Bro_MSW_4m_d  {
+		editorPreview = "Bro_ModularShoothouse\previews\Land_Bro_MSW_4m_d_rubber.jpg";
+		editorSubcategory = "sm_old_r";
+		hiddenSelectionsTextures[]= {
+			"Bro_ModularShoothouse\rubber\msh_co.paa"
+		};
+		hiddenSelectionsMaterials[]= {
+			"Bro_ModularShoothouse\rubber\msh.rvmat"
+		};
+	};
+	class Land_Bro_MSW_4m_dd_rubber: Land_Bro_MSW_4m_dd  {
+		editorPreview = "Bro_ModularShoothouse\previews\Land_Bro_MSW_4m_dd_rubber.jpg";
+		editorSubcategory = "sm_old_r";
+		hiddenSelectionsTextures[]= {
+			"Bro_ModularShoothouse\rubber\msh_co.paa"
+		};
+		hiddenSelectionsMaterials[]= {
+			"Bro_ModularShoothouse\rubber\msh.rvmat"
 		};
 	};
 // Backwards compatibility for TB, we gotta stick Land_ in front because... we just gotta!!! So I gotta maintain backwards compatibility here.
