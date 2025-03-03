@@ -80,6 +80,7 @@ class CfgVehicles {
 		};
 	};
 	class Bro_MSF_Remastered: Bro_MSW_Remastered {
+		destrType = "DestructNo";
 		editorSubcategory = "sm_f_r";
 		hiddenSelections[]={};
 		hiddenSelectionsTextures[]={};
