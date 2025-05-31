@@ -266,7 +266,7 @@ class CfgVehicles {
 		displayName = "Wall: 4m Doorway (Double)";
 		model = "Bro_ModularShoothouse\Bro_MSW_4m_dd.p3d";
 		editorPreview = "Bro_ModularShoothouse\previews\Land_Bro_MSW_4m_dd.jpg";
-		numberOfDoors = 1;
+		numberOfDoors = 2;
 		class AnimationSources {
 			class Door_1 {
 				source = "user";
