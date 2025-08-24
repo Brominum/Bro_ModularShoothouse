@@ -1,5 +1,5 @@
-source\
-temp\
+source/
+temp/
 *.png
 *.psd
 temp/wspic_1.jpg
