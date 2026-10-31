@@ -12,7 +12,6 @@ class CfgFunctions  {
 			file = "\Bro_ModularShoothouse\functions";
 			class snap{};
 			class snap2{};
-			class snap3{};
 		};
 	};
 };
@@ -134,14 +133,20 @@ class CfgVehicles {
 			verticalOffsetWorld=0;
 			init="''";
 		};
-        ace_dragging_canDrag = 1;                     // 0 = No, 1 = Yes
-        ace_dragging_dragPosition[] = {0, 1.2, 0};    // Offset relative to player
-        ace_dragging_dragDirection = 0;               // Rotation direction
-        ace_dragging_ignoreWeight = 1;                // 0 = No, 1 = Yes
-        ace_dragging_canCarry = 1;                    // 0 = No, 1 = Yes
-        ace_dragging_carryPosition[] = {0, 1.2, 0};   // Offset relative to player
-        ace_dragging_carryDirection = 0;              // Rotation direction
-        ace_dragging_ignoreWeightCarry = 1;           // 0 = No, 1 = Yes
+		// ACE reads these values only from a CBA init event, and CBA does not give that event to House classes.
+		// This init event calls the ACE function directly. Without ACE it does nothing, so ACE and CBA stay optional.
+		class EventHandlers: EventHandlers {
+			init = "if (!isNil 'ace_dragging_fnc_initObject') then {_this call ace_dragging_fnc_initObject};";
+		};
+		// ACE drag and carry: 0 = no, 1 = yes. The positions are offsets from the player.
+		ace_dragging_canDrag = 1;
+		ace_dragging_dragPosition[] = {0, 1.2, 0};
+		ace_dragging_dragDirection = 0;
+		ace_dragging_ignoreWeight = 1;
+		ace_dragging_canCarry = 1;
+		ace_dragging_carryPosition[] = {0, 1.2, 0};
+		ace_dragging_carryDirection = 0;
+		ace_dragging_ignoreWeightCarry = 1;
 	};
 // Objects
 	class Bro_MSW_Barricade: Bro_MSW_Object_Base {
@@ -227,10 +232,6 @@ class CfgVehicles {
 		displayName = "Wall: 2m";
 		model = "Bro_ModularShoothouse\Bro_MSW_2m.p3d";
 		editorPreview = "Bro_ModularShoothouse\previews\bro_MSW_2m.jpg";
-		class EventHandlers: EventHandlers {
-			dragged3DEN = "_this call bro_fnc_snap3;";
-			registeredToWorld3DEN = "_this call bro_fnc_snap3;";
-		};
 	};
 	class Bro_MSW_4m: Bro_MSW_1m {
 		scope = 2;
@@ -245,10 +246,6 @@ class CfgVehicles {
 		displayName = "Wall: 8m";
 		model = "Bro_ModularShoothouse\Bro_MSW_8m.p3d";
 		editorPreview = "Bro_ModularShoothouse\previews\bro_MSW_8m.jpg";
-		class EventHandlers: EventHandlers {
-			dragged3DEN = "_this call bro_fnc_snap3;";
-			registeredToWorld3DEN = "_this call bro_fnc_snap3;";
-		};
 	};
 // Corner walls
 	class Bro_MSW_1m_c: Bro_MSW_1m {
