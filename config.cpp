@@ -36,9 +36,13 @@ class CfgEditorSubcategories {
 	class mcw {
 		displayName = "Catwalks";
 	};
+	class msw_objs {
+		displayName = "Objects";
+	};
 };
 class CfgVehicles {
 // Inheritances. REALLY don't modify these lol.
+	class Static;
 	class House;
 	class House_F: House {
 		class Eventhandlers;
@@ -114,6 +118,51 @@ class CfgVehicles {
 			init="''";
 		};
 	};
+	class Bro_MSW_Object_Base: House_F {
+		author = "Bromine";
+		destrType = "DestructNo";
+		icon = "Bro_ModularShoothouse\icon.paa";
+		editorCategory = "Bro_MSW_Base";
+		editorSubcategory = "msw_objs";
+		scope = 1;
+		scopeCurator = 1;
+		class SimpleObject {
+			eden=1;
+			animate[]={};
+			hide[]={};
+			verticalOffset=0;
+			verticalOffsetWorld=0;
+			init="''";
+		};
+        ace_dragging_canDrag = 1;                     // 0 = No, 1 = Yes
+        ace_dragging_dragPosition[] = {0, 1.2, 0};    // Offset relative to player
+        ace_dragging_dragDirection = 0;               // Rotation direction
+        ace_dragging_ignoreWeight = 1;                // 0 = No, 1 = Yes
+        ace_dragging_canCarry = 1;                    // 0 = No, 1 = Yes
+        ace_dragging_carryPosition[] = {0, 1.2, 0};   // Offset relative to player
+        ace_dragging_carryDirection = 0;              // Rotation direction
+        ace_dragging_ignoreWeightCarry = 1;           // 0 = No, 1 = Yes
+	};
+// Objects
+	class Bro_MSW_Barricade: Bro_MSW_Object_Base {
+		scope = 2;
+		scopeCurator = 2;
+		displayName="Barricade";
+		model="Bro_ModularShoothouse\Bro_MSW_Barricade.p3d";
+	};
+	class Bro_MSW_Barricade_Half: Bro_MSW_Object_Base {
+		scope = 2;
+		scopeCurator = 2;
+		displayName="Barricade (Half)";
+		model="Bro_ModularShoothouse\Bro_MSW_Barricade_Half.p3d";
+	};
+	class Bro_MSW_Target: Bro_MSW_Object_Base {
+		scope = 2;
+		scopeCurator = 2;
+		destrType = "DestructDefault";
+		displayName="Paper Target";
+		model="Bro_ModularShoothouse\Bro_MSW_Target.p3d";
+	};
 // Catwalks
 	class Bro_CWK_2m_s: Bro_CWK_Base {
 		scope = 2;
@@ -123,31 +172,43 @@ class CfgVehicles {
 		editorPreview = "Bro_ModularShoothouse\previews\bro_CWK_2m_s.jpg";
 	};
 	class Bro_CWK_2m_t: Bro_CWK_2m_s {
+		scope = 2;
+		scopeCurator = 2;
 		displayName = "Catwalk: 2m Endcap";
 		model = "Bro_ModularShoothouse\Bro_CWK_2m_t.p3d";
 		editorPreview = "Bro_ModularShoothouse\previews\bro_CWK_2m_t.jpg";
 	};
 	class Bro_CWK_2m_e: Bro_CWK_2m_s {
+		scope = 2;
+		scopeCurator = 2;
 		displayName = "Catwalk: 2m Middle";
 		model = "Bro_ModularShoothouse\Bro_CWK_2m_e.p3d";
 		editorPreview = "Bro_ModularShoothouse\previews\bro_CWK_2m_e.jpg";
 	};
 	class Bro_CWK_2m_c: Bro_CWK_2m_s {
+		scope = 2;
+		scopeCurator = 2;
 		displayName = "Catwalk: 2m Corner";
 		model = "Bro_ModularShoothouse\Bro_CWK_2m_c.p3d";
 		editorPreview = "Bro_ModularShoothouse\previews\bro_CWK_2m_c.jpg";
 	};
 	class Bro_CWK_2m_o: Bro_CWK_2m_s {
+		scope = 2;
+		scopeCurator = 2;
 		displayName = "Catwalk: 2m Open Side";
 		model = "Bro_ModularShoothouse\Bro_CWK_2m_o.p3d";
 		editorPreview = "Bro_ModularShoothouse\previews\bro_CWK_2m_o.jpg";
 	};
 	class Bro_CWK_4m_s: Bro_CWK_2m_s {
+		scope = 2;
+		scopeCurator = 2;
 		displayName = "Catwalk: 4m Straight";
 		model = "Bro_ModularShoothouse\Bro_CWK_4m_s.p3d";
 		editorPreview = "Bro_ModularShoothouse\previews\bro_CWK_4m_s.jpg";
 	};
 	class Bro_CWK_Stairs: Bro_CWK_2m_s {
+		scope = 2;
+		scopeCurator = 2;
 		displayName = "Catwalk: Stairs";
 		model = "Bro_ModularShoothouse\Bro_CWK_stairs.p3d";
 		editorPreview = "Bro_ModularShoothouse\previews\Bro_CWK_Stairs.jpg";
@@ -161,6 +222,8 @@ class CfgVehicles {
 		editorPreview = "Bro_ModularShoothouse\previews\bro_MSW_1m.jpg";
 	};
 	class Bro_MSW_2m: Bro_MSW_1m {
+		scope = 2;
+		scopeCurator = 2;
 		displayName = "Wall: 2m";
 		model = "Bro_ModularShoothouse\Bro_MSW_2m.p3d";
 		editorPreview = "Bro_ModularShoothouse\previews\bro_MSW_2m.jpg";
@@ -170,11 +233,15 @@ class CfgVehicles {
 		};
 	};
 	class Bro_MSW_4m: Bro_MSW_1m {
+		scope = 2;
+		scopeCurator = 2;
 		displayName = "Wall: 4m";
 		model = "Bro_ModularShoothouse\Bro_MSW_4m.p3d";
 		editorPreview = "Bro_ModularShoothouse\previews\bro_MSW_4m.jpg";
 	};
 	class Bro_MSW_8m: Bro_MSW_1m {
+		scope = 2;
+		scopeCurator = 2;
 		displayName = "Wall: 8m";
 		model = "Bro_ModularShoothouse\Bro_MSW_8m.p3d";
 		editorPreview = "Bro_ModularShoothouse\previews\bro_MSW_8m.jpg";
@@ -185,33 +252,45 @@ class CfgVehicles {
 	};
 // Corner walls
 	class Bro_MSW_1m_c: Bro_MSW_1m {
+		scope = 2;
+		scopeCurator = 2;
 		displayName = "Wall: 1m Corner";
 		model = "Bro_ModularShoothouse\Bro_MSW_1m_c.p3d";
 		editorPreview = "Bro_ModularShoothouse\previews\bro_MSW_1m_c.jpg";
 	};
 	class Bro_MSW_2m_c: Bro_MSW_1m {
+		scope = 2;
+		scopeCurator = 2;
 		displayName = "Wall: 2m Corner";
 		model = "Bro_ModularShoothouse\Bro_MSW_2m_c.p3d";
 		editorPreview = "Bro_ModularShoothouse\previews\bro_MSW_2m_c.jpg";
 	};
 // Window walls
 	class Bro_MSW_2m_w: Bro_MSW_1m {
+		scope = 2;
+		scopeCurator = 2;
 		displayName = "Wall: 2m Window";
 		model = "Bro_ModularShoothouse\Bro_MSW_2m_w.p3d";
 		editorPreview = "Bro_ModularShoothouse\previews\bro_MSW_2m_w.jpg";
 	};
 	class Bro_MSW_4m_w: Bro_MSW_1m {
+		scope = 2;
+		scopeCurator = 2;
 		displayName = "Wall: 4m Window";
 		model = "Bro_ModularShoothouse\Bro_MSW_4m_w.p3d";
 		editorPreview = "Bro_ModularShoothouse\previews\bro_MSW_4m_w.jpg";
 	};
 // Empty doorways
 	class Bro_MSW_2m_de: Bro_MSW_1m {
+		scope = 2;
+		scopeCurator = 2;
 		displayName = "Wall: 2m Doorway (No door)";
 		model = "Bro_ModularShoothouse\Bro_MSW_2m_de.p3d";
 		editorPreview = "Bro_ModularShoothouse\previews\bro_MSW_2m_de.jpg";
 	};
 	class Bro_MSW_4m_de: Bro_MSW_1m {
+		scope = 2;
+		scopeCurator = 2;
 		displayName = "Wall: 4m Doorway (No door)";
 		model = "Bro_ModularShoothouse\Bro_MSW_4m_de.p3d";
 		editorPreview = "Bro_ModularShoothouse\previews\bro_MSW_4m_de.jpg";
@@ -256,6 +335,8 @@ class CfgVehicles {
 		};
 	};
 	class Land_Bro_MSW_4m_d: Land_Bro_MSW_2m_d {
+		scope = 2;
+		scopeCurator = 2;
 		displayName = "Wall: 4m Doorway";
 		model = "Bro_ModularShoothouse\Bro_MSW_4m_d.p3d";
 		editorPreview = "Bro_ModularShoothouse\previews\Land_Bro_MSW_4m_d.jpg";
@@ -326,6 +407,8 @@ class CfgVehicles {
 	};
 //Concrete Variants
 	class Bro_MSW_1m_conc: Bro_MSW_1m  {
+		scope = 2;
+		scopeCurator = 2;
 		editorPreview = "Bro_ModularShoothouse\previews\bro_MSW_1m_conc.jpg";
 		editorSubcategory = "sm2";
 		hiddenSelectionsTextures[]= {
@@ -336,6 +419,8 @@ class CfgVehicles {
 		};
 	};
 	class Bro_MSW_2m_conc: Bro_MSW_2m  {
+		scope = 2;
+		scopeCurator = 2;
 		editorPreview = "Bro_ModularShoothouse\previews\bro_MSW_2m_conc.jpg";
 		editorSubcategory = "sm2";
 		hiddenSelectionsTextures[]= {
@@ -346,6 +431,8 @@ class CfgVehicles {
 		};
 	};
 	class Bro_MSW_4m_conc: Bro_MSW_4m  {
+		scope = 2;
+		scopeCurator = 2;
 		editorPreview = "Bro_ModularShoothouse\previews\bro_MSW_4m_conc.jpg";
 		editorSubcategory = "sm2";
 		hiddenSelectionsTextures[]= {
@@ -356,6 +443,8 @@ class CfgVehicles {
 		};
 	};
 	class Bro_MSW_8m_conc: Bro_MSW_8m  {
+		scope = 2;
+		scopeCurator = 2;
 		editorPreview = "Bro_ModularShoothouse\previews\bro_MSW_8m_conc.jpg";
 		editorSubcategory = "sm2";
 		hiddenSelectionsTextures[]= {
@@ -366,6 +455,8 @@ class CfgVehicles {
 		};
 	};
 	class Bro_MSW_1m_c_conc: Bro_MSW_1m_c  {
+		scope = 2;
+		scopeCurator = 2;
 		editorPreview = "Bro_ModularShoothouse\previews\bro_MSW_1m_c_conc.jpg";
 		editorSubcategory = "sm2";
 		hiddenSelectionsTextures[]= {
@@ -376,6 +467,8 @@ class CfgVehicles {
 		};
 	};
 	class Bro_MSW_2m_c_conc: Bro_MSW_2m_c  {
+		scope = 2;
+		scopeCurator = 2;
 		editorPreview = "Bro_ModularShoothouse\previews\bro_MSW_2m_c_conc.jpg";
 		editorSubcategory = "sm2";
 		hiddenSelectionsTextures[]= {
@@ -386,6 +479,8 @@ class CfgVehicles {
 		};
 	};
 	class Bro_MSW_2m_w_conc: Bro_MSW_2m_w  {
+		scope = 2;
+		scopeCurator = 2;
 		editorPreview = "Bro_ModularShoothouse\previews\bro_MSW_2m_w_conc.jpg";
 		editorSubcategory = "sm2";
 		hiddenSelectionsTextures[]= {
@@ -396,6 +491,8 @@ class CfgVehicles {
 		};
 	};
 	class Bro_MSW_4m_w_conc: Bro_MSW_4m_w  {
+		scope = 2;
+		scopeCurator = 2;
 		editorPreview = "Bro_ModularShoothouse\previews\bro_MSW_4m_w_conc.jpg";
 		editorSubcategory = "sm2";
 		hiddenSelectionsTextures[]= {
@@ -406,6 +503,8 @@ class CfgVehicles {
 		};
 	};
 	class Bro_MSW_2m_de_conc: Bro_MSW_2m_de  {
+		scope = 2;
+		scopeCurator = 2;
 		editorPreview = "Bro_ModularShoothouse\previews\bro_MSW_2m_de_conc.jpg";
 		editorSubcategory = "sm2";
 		hiddenSelectionsTextures[]= {
@@ -416,6 +515,8 @@ class CfgVehicles {
 		};
 	};
 	class Bro_MSW_4m_de_conc: Bro_MSW_4m_de  {
+		scope = 2;
+		scopeCurator = 2;
 		editorPreview = "Bro_ModularShoothouse\previews\bro_MSW_4m_de_conc.jpg";
 		editorSubcategory = "sm2";
 		hiddenSelectionsTextures[]= {
@@ -426,6 +527,8 @@ class CfgVehicles {
 		};
 	};
 	class Land_Bro_MSW_2m_d_conc: Land_Bro_MSW_2m_d  {
+		scope = 2;
+		scopeCurator = 2;
 		editorPreview = "Bro_ModularShoothouse\previews\Land_Bro_MSW_2m_d_conc.jpg";
 		editorSubcategory = "sm2";
 		hiddenSelectionsTextures[]= {
@@ -436,6 +539,8 @@ class CfgVehicles {
 		};
 	};
 	class Land_Bro_MSW_4m_d_conc: Land_Bro_MSW_4m_d  {
+		scope = 2;
+		scopeCurator = 2;
 		editorPreview = "Bro_ModularShoothouse\previews\Land_Bro_MSW_4m_d_conc.jpg";
 		editorSubcategory = "sm2";
 		hiddenSelectionsTextures[]= {
@@ -446,6 +551,8 @@ class CfgVehicles {
 		};
 	};
 	class Land_Bro_MSW_4m_dd_conc: Land_Bro_MSW_4m_dd  {
+		scope = 2;
+		scopeCurator = 2;
 		editorPreview = "Bro_ModularShoothouse\previews\Land_Bro_MSW_4m_dd_conc.jpg";
 		editorSubcategory = "sm2";
 		hiddenSelectionsTextures[]= {
@@ -457,6 +564,8 @@ class CfgVehicles {
 	};
 //Rubber Variants
 	class Bro_MSW_1m_rubber: Bro_MSW_1m  {
+		scope = 2;
+		scopeCurator = 2;
 		editorPreview = "Bro_ModularShoothouse\previews\bro_MSW_1m_rubber.jpg";
 		editorSubcategory = "sm_old_r";
 		hiddenSelectionsTextures[]= {
@@ -467,6 +576,8 @@ class CfgVehicles {
 		};
 	};
 	class Bro_MSW_2m_rubber: Bro_MSW_2m  {
+		scope = 2;
+		scopeCurator = 2;
 		editorPreview = "Bro_ModularShoothouse\previews\bro_MSW_2m_rubber.jpg";
 		editorSubcategory = "sm_old_r";
 		hiddenSelectionsTextures[]= {
@@ -477,6 +588,8 @@ class CfgVehicles {
 		};
 	};
 	class Bro_MSW_4m_rubber: Bro_MSW_4m  {
+		scope = 2;
+		scopeCurator = 2;
 		editorPreview = "Bro_ModularShoothouse\previews\bro_MSW_4m_rubber.jpg";
 		editorSubcategory = "sm_old_r";
 		hiddenSelectionsTextures[]= {
@@ -487,6 +600,8 @@ class CfgVehicles {
 		};
 	};
 	class Bro_MSW_8m_rubber: Bro_MSW_8m  {
+		scope = 2;
+		scopeCurator = 2;
 		editorPreview = "Bro_ModularShoothouse\previews\bro_MSW_8m_rubber.jpg";
 		editorSubcategory = "sm_old_r";
 		hiddenSelectionsTextures[]= {
@@ -497,6 +612,8 @@ class CfgVehicles {
 		};
 	};
 	class Bro_MSW_1m_c_rubber: Bro_MSW_1m_c  {
+		scope = 2;
+		scopeCurator = 2;
 		editorPreview = "Bro_ModularShoothouse\previews\bro_MSW_1m_c_rubber.jpg";
 		editorSubcategory = "sm_old_r";
 		hiddenSelectionsTextures[]= {
@@ -507,6 +624,8 @@ class CfgVehicles {
 		};
 	};
 	class Bro_MSW_2m_c_rubber: Bro_MSW_2m_c  {
+		scope = 2;
+		scopeCurator = 2;
 		editorPreview = "Bro_ModularShoothouse\previews\bro_MSW_2m_c_rubber.jpg";
 		editorSubcategory = "sm_old_r";
 		hiddenSelectionsTextures[]= {
@@ -517,6 +636,8 @@ class CfgVehicles {
 		};
 	};
 	class Bro_MSW_2m_w_rubber: Bro_MSW_2m_w  {
+		scope = 2;
+		scopeCurator = 2;
 		editorPreview = "Bro_ModularShoothouse\previews\bro_MSW_2m_w_rubber.jpg";
 		editorSubcategory = "sm_old_r";
 		hiddenSelectionsTextures[]= {
@@ -527,6 +648,8 @@ class CfgVehicles {
 		};
 	};
 	class Bro_MSW_4m_w_rubber: Bro_MSW_4m_w  {
+		scope = 2;
+		scopeCurator = 2;
 		editorPreview = "Bro_ModularShoothouse\previews\bro_MSW_4m_w_rubber.jpg";
 		editorSubcategory = "sm_old_r";
 		hiddenSelectionsTextures[]= {
@@ -537,6 +660,8 @@ class CfgVehicles {
 		};
 	};
 	class Bro_MSW_2m_de_rubber: Bro_MSW_2m_de  {
+		scope = 2;
+		scopeCurator = 2;
 		editorPreview = "Bro_ModularShoothouse\previews\bro_MSW_2m_de_rubber.jpg";
 		editorSubcategory = "sm_old_r";
 		hiddenSelectionsTextures[]= {
@@ -547,6 +672,8 @@ class CfgVehicles {
 		};
 	};
 	class Bro_MSW_4m_de_rubber: Bro_MSW_4m_de  {
+		scope = 2;
+		scopeCurator = 2;
 		editorPreview = "Bro_ModularShoothouse\previews\bro_MSW_4m_de_rubber.jpg";
 		editorSubcategory = "sm_old_r";
 		hiddenSelectionsTextures[]= {
@@ -557,6 +684,8 @@ class CfgVehicles {
 		};
 	};
 	class Land_Bro_MSW_2m_d_rubber: Land_Bro_MSW_2m_d  {
+		scope = 2;
+		scopeCurator = 2;
 		editorPreview = "Bro_ModularShoothouse\previews\Land_Bro_MSW_2m_d_rubber.jpg";
 		editorSubcategory = "sm_old_r";
 		hiddenSelectionsTextures[]= {
@@ -567,6 +696,8 @@ class CfgVehicles {
 		};
 	};
 	class Land_Bro_MSW_4m_d_rubber: Land_Bro_MSW_4m_d  {
+		scope = 2;
+		scopeCurator = 2;
 		editorPreview = "Bro_ModularShoothouse\previews\Land_Bro_MSW_4m_d_rubber.jpg";
 		editorSubcategory = "sm_old_r";
 		hiddenSelectionsTextures[]= {
@@ -577,6 +708,8 @@ class CfgVehicles {
 		};
 	};
 	class Land_Bro_MSW_4m_dd_rubber: Land_Bro_MSW_4m_dd  {
+		scope = 2;
+		scopeCurator = 2;
 		editorPreview = "Bro_ModularShoothouse\previews\Land_Bro_MSW_4m_dd_rubber.jpg";
 		editorSubcategory = "sm_old_r";
 		hiddenSelectionsTextures[]= {

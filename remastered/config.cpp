@@ -89,52 +89,66 @@ class CfgVehicles {
 	};
 // Floors
 	class Land_Bro_MSF_Big: Bro_MSF_Remastered {
-		editorPreview = "Bro_ModularShoothouse\previews\Land_Bro_MSF_Big.jpg";
 		scope = 2;
 		scopeCurator = 2;
+		editorPreview = "Bro_ModularShoothouse\previews\Land_Bro_MSF_Big.jpg";
 		displayName = "Floor: Big";
 		model = "Bro_ModularShoothouse\remastered\Bro_MSF_Big.p3d";
 	};
 	class Land_Bro_MSF_Small: Land_Bro_MSF_Big {
+		scope = 2;
+		scopeCurator = 2;
 		editorPreview = "Bro_ModularShoothouse\previews\Land_Bro_MSF_Small.jpg";
 		displayName = "Floor: Small";
 		model = "Bro_ModularShoothouse\remastered\Bro_MSF_Small.p3d";
 	};
 	class Land_Bro_MSF_Stairs_Floor: Land_Bro_MSF_Big {
+		scope = 2;
+		scopeCurator = 2;
 		editorPreview = "Bro_ModularShoothouse\previews\Land_Bro_MSF_Stairs_Floor.jpg";
 		displayName = "Floor: Big, For Stairs";
 		model = "Bro_ModularShoothouse\remastered\Bro_MSF_Stairs_Floor.p3d";
 	};
 	class Land_Bro_MSF_Stairs: Land_Bro_MSF_Big {
+		scope = 2;
+		scopeCurator = 2;
 		editorPreview = "Bro_ModularShoothouse\previews\Land_Bro_MSF_Stairs.jpg";
 		displayName = "Staircase";
 		model = "Bro_ModularShoothouse\remastered\Bro_MSF_Stairs.p3d";
 	};
 // Walls
 	class Land_Bro_MSWR_Plain: Bro_MSW_Remastered {
-		editorPreview = "Bro_ModularShoothouse\previews\Land_Bro_MSWR_Plain.jpg";
 		scope = 2;
 		scopeCurator = 2;
+		editorPreview = "Bro_ModularShoothouse\previews\Land_Bro_MSWR_Plain.jpg";
 		displayName = "Wall: Plain";
 		model = "Bro_ModularShoothouse\remastered\Bro_MSWR_Plain.p3d";
 	};
 	class Land_Bro_MSWR_Corner: Land_Bro_MSWR_Plain {
+		scope = 2;
+		scopeCurator = 2;
 		editorPreview = "Bro_ModularShoothouse\previews\Land_Bro_MSWR_Corner.jpg";
 		displayName = "Wall: Corner / Endcap";
 		model = "Bro_ModularShoothouse\remastered\Bro_MSWR_Corner.p3d";
 	};
 	class Land_Bro_MSWR_Window: Land_Bro_MSWR_Plain {
+		scope = 2;
+		scopeCurator = 2;
 		editorPreview = "Bro_ModularShoothouse\previews\Land_Bro_MSWR_Window.jpg";
 		displayName = "Wall: Window";
 		model = "Bro_ModularShoothouse\remastered\Bro_MSWR_Window.p3d";
 	};
 	class Land_Bro_MSWR_Doorway_Empty: Land_Bro_MSWR_Plain {
+		scope = 2;
+		scopeCurator = 2;
 		editorPreview = "Bro_ModularShoothouse\previews\Land_Bro_MSWR_Doorway_Empty.jpg";
 		displayName = "Wall: Doorway, Empty";
 		model = "Bro_ModularShoothouse\remastered\Bro_MSWR_Doorway_Empty.p3d";
 	};
 // Doors
 	class Land_Bro_MSWR_Doorway: Land_Bro_MSWR_Plain {
+		scope = 2;
+		scopeCurator = 2;
 		editorPreview = "Bro_ModularShoothouse\previews\Land_Bro_MSWR_Doorway.jpg";
 		displayName = "Wall: Door, Left";
 		model = "Bro_ModularShoothouse\remastered\Bro_MSWR_Doorway.p3d";
@@ -171,42 +185,56 @@ class CfgVehicles {
 		};
 	};
 	class Land_Bro_MSWR_Doorway_Mirrored: Land_Bro_MSWR_Doorway {
+		scope = 2;
+		scopeCurator = 2;
 		editorPreview = "Bro_ModularShoothouse\previews\Land_Bro_MSWR_Doorway.jpg";
 		displayName = "Wall: Door, Right";
 		model = "Bro_ModularShoothouse\remastered\Bro_MSWR_Doorway_Mirrored.p3d";
 	};
 // ----- WOODEN WALL VARIANTS -----
 	class Land_Bro_MSWR_Plain_Wood: Land_Bro_MSWR_Plain {
+		scope = 2;
+		scopeCurator = 2;
 		editorSubcategory = "sm_r_w";
 		editorPreview = "Bro_ModularShoothouse\previews\Land_Bro_MSWR_Plain_Wood.jpg";
 		hiddenSelectionsTextures[]={"Bro_ModularShoothouse\remastered\ModShNew_WOOD_co.paa"};
 		hiddenSelectionsMaterials[]={"Bro_ModularShoothouse\remastered\ModShNew_WOOD.rvmat"};
 	};
 	class Land_Bro_MSWR_Corner_Wood: Land_Bro_MSWR_Corner {
+		scope = 2;
+		scopeCurator = 2;
 		editorSubcategory = "sm_r_w";
 		editorPreview = "Bro_ModularShoothouse\previews\Land_Bro_MSWR_Corner_Wood.jpg";
 		hiddenSelectionsTextures[]={"Bro_ModularShoothouse\remastered\ModShNew_WOOD_co.paa"};
 		hiddenSelectionsMaterials[]={"Bro_ModularShoothouse\remastered\ModShNew_WOOD.rvmat"};
 	};
 	class Land_Bro_MSWR_Window_Wood: Land_Bro_MSWR_Window {
+		scope = 2;
+		scopeCurator = 2;
 		editorSubcategory = "sm_r_w";
 		editorPreview = "Bro_ModularShoothouse\previews\Land_Bro_MSWR_Window_Wood.jpg";
 		hiddenSelectionsTextures[]={"Bro_ModularShoothouse\remastered\ModShNew_WOOD_co.paa"};
 		hiddenSelectionsMaterials[]={"Bro_ModularShoothouse\remastered\ModShNew_WOOD.rvmat"};
 	};
 	class Land_Bro_MSWR_Doorway_Empty_Wood: Land_Bro_MSWR_Doorway_Empty {
+		scope = 2;
+		scopeCurator = 2;
 		editorSubcategory = "sm_r_w";
 		editorPreview = "Bro_ModularShoothouse\previews\Land_Bro_MSWR_Doorway_Empty_Wood.jpg";
 		hiddenSelectionsTextures[]={"Bro_ModularShoothouse\remastered\ModShNew_WOOD_co.paa"};
 		hiddenSelectionsMaterials[]={"Bro_ModularShoothouse\remastered\ModShNew_WOOD.rvmat"};
 	};
 	class Land_Bro_MSWR_Doorway_Wood: Land_Bro_MSWR_Doorway {
+		scope = 2;
+		scopeCurator = 2;
 		editorSubcategory = "sm_r_w";
 		editorPreview = "Bro_ModularShoothouse\previews\Land_Bro_MSWR_Doorway_Wood.jpg";
 		hiddenSelectionsTextures[]={"Bro_ModularShoothouse\remastered\ModShNew_WOOD_co.paa"};
 		hiddenSelectionsMaterials[]={"Bro_ModularShoothouse\remastered\ModShNew_WOOD.rvmat"};
 	};
 	class Land_Bro_MSWR_Doorway_Mirrored_Wood: Land_Bro_MSWR_Doorway_Mirrored {
+		scope = 2;
+		scopeCurator = 2;
 		editorSubcategory = "sm_r_w";
 		editorPreview = "Bro_ModularShoothouse\previews\Land_Bro_MSWR_Doorway_Mirrored_Wood.jpg";
 		hiddenSelectionsTextures[]={"Bro_ModularShoothouse\remastered\ModShNew_WOOD_co.paa"};
@@ -214,36 +242,48 @@ class CfgVehicles {
 	};
 // ----- RUBBER WALL VARIANTS -----
 	class Land_Bro_MSWR_Plain_Rubber: Land_Bro_MSWR_Plain {
+		scope = 2;
+		scopeCurator = 2;
 		editorSubcategory = "sm_r_r";
 		editorPreview = "Bro_ModularShoothouse\previews\Land_Bro_MSWR_Plain_Rubber.jpg";
 		hiddenSelectionsTextures[]={"Bro_ModularShoothouse\remastered\ModShNew_RUBBER_co.paa"};
 		hiddenSelectionsMaterials[]={"Bro_ModularShoothouse\remastered\ModShNew_RUBBER.rvmat"};
 	};
 	class Land_Bro_MSWR_Corner_Rubber: Land_Bro_MSWR_Corner {
+		scope = 2;
+		scopeCurator = 2;
 		editorSubcategory = "sm_r_r";
 		editorPreview = "Bro_ModularShoothouse\previews\Land_Bro_MSWR_Corner_Rubber.jpg";
 		hiddenSelectionsTextures[]={"Bro_ModularShoothouse\remastered\ModShNew_RUBBER_co.paa"};
 		hiddenSelectionsMaterials[]={"Bro_ModularShoothouse\remastered\ModShNew_RUBBER.rvmat"};
 	};
 	class Land_Bro_MSWR_Window_Rubber: Land_Bro_MSWR_Window {
+		scope = 2;
+		scopeCurator = 2;
 		editorSubcategory = "sm_r_r";
 		editorPreview = "Bro_ModularShoothouse\previews\Land_Bro_MSWR_Window_Rubber.jpg";
 		hiddenSelectionsTextures[]={"Bro_ModularShoothouse\remastered\ModShNew_RUBBER_co.paa"};
 		hiddenSelectionsMaterials[]={"Bro_ModularShoothouse\remastered\ModShNew_RUBBER.rvmat"};
 	};
 	class Land_Bro_MSWR_Doorway_Empty_Rubber: Land_Bro_MSWR_Doorway_Empty {
+		scope = 2;
+		scopeCurator = 2;
 		editorSubcategory = "sm_r_r";
 		editorPreview = "Bro_ModularShoothouse\previews\Land_Bro_MSWR_Doorway_Empty_Rubber.jpg";
 		hiddenSelectionsTextures[]={"Bro_ModularShoothouse\remastered\ModShNew_RUBBER_co.paa"};
 		hiddenSelectionsMaterials[]={"Bro_ModularShoothouse\remastered\ModShNew_RUBBER.rvmat"};
 	};
 	class Land_Bro_MSWR_Doorway_Rubber: Land_Bro_MSWR_Doorway {
+		scope = 2;
+		scopeCurator = 2;
 		editorSubcategory = "sm_r_r";
 		editorPreview = "Bro_ModularShoothouse\previews\Land_Bro_MSWR_Doorway_Rubber.jpg";
 		hiddenSelectionsTextures[]={"Bro_ModularShoothouse\remastered\ModShNew_RUBBER_co.paa"};
 		hiddenSelectionsMaterials[]={"Bro_ModularShoothouse\remastered\ModShNew_RUBBER.rvmat"};
 	};
 	class Land_Bro_MSWR_Doorway_Mirrored_Rubber: Land_Bro_MSWR_Doorway_Mirrored {
+		scope = 2;
+		scopeCurator = 2;
 		editorSubcategory = "sm_r_r";
 		editorPreview = "Bro_ModularShoothouse\previews\Land_Bro_MSWR_Doorway_Mirrored_Rubber.jpg";
 		hiddenSelectionsTextures[]={"Bro_ModularShoothouse\remastered\ModShNew_RUBBER_co.paa"};

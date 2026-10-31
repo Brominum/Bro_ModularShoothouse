@@ -84,6 +84,6 @@ private _snapPosWorld = _object modelToWorldVisual _snapPosModel;
 private _newPosASL = (getPosASL _object) vectorAdd (_bestTheirPoint vectorDiff _snapPosWorld);
 
 // Lock Z to the target object's altitude for flush/level placement
-_newPosASL set [2, (getPosASL _bestObject) # 2];
+//_newPosASL set [2, (getPosASL _bestObject) # 2];	DEBUG REMOVAL
 
 _object set3DENAttribute ["position", ASLToATL _newPosASL];
