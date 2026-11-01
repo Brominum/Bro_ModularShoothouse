@@ -12,6 +12,7 @@ class CfgFunctions  {
 			file = "\Bro_ModularShoothouse\functions";
 			class snap{};
 			class snap2{};
+			class resetTarget{};
 		};
 	};
 };
@@ -167,6 +168,17 @@ class CfgVehicles {
 		destrType = "DestructDefault";
 		displayName="Paper Target";
 		model="Bro_ModularShoothouse\Bro_MSW_Target.p3d";
+		class UserActions {
+			// Arma cannot remove bullet holes, so the server deletes the target and creates a new one at the same position
+			class Bro_ResetTarget {
+				displayName="Reset Target";
+				position="";
+				radius=1.5;
+				onlyForPlayer=1;
+				condition="true";
+				statement="[this] remoteExecCall ['bro_fnc_resetTarget', 2];";
+			};
+		};
 	};
 // Catwalks
 	class Bro_CWK_2m_s: Bro_CWK_Base {
